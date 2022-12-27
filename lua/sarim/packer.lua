@@ -63,6 +63,7 @@ return require('packer').startup(function(use)
       end
     }
 
+    use "numToStr/Comment.nvim"
     use "tpope/vim-surround"
     use "tpope/vim-repeat"
     use "ggandor/leap.nvim"

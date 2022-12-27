@@ -10,6 +10,15 @@ require'nvim-treesitter.configs'.setup {
   -- Recommendation: set to false if you don't have `tree-sitter` CLI installed locally
   auto_install = true,
 
+  incremental_selection = {
+      enable = true,
+      keymaps = {
+          node_incremental = '<c-h>',
+          scope_incremental = '<c-s>',
+          node_decremental = '<c-l>',
+      }
+  },
+
   highlight = {
     -- `false` will disable the whole extension
     enable = true,
@@ -29,5 +38,6 @@ require'nvim-treesitter.configs'.setup {
     -- Using this option may slow down your editor, and you may see some duplicate highlights.
     -- Instead of true it can also be a list of languages
     additional_vim_regex_highlighting = false,
+
   },
 }
