@@ -14,8 +14,9 @@ return require('packer').startup(function(use)
         requires = { {'nvim-lua/plenary.nvim'} }
     }
 
-
-    use {'nvim-treesitter/nvim-treesitter'}
+    use 'nvim-treesitter/nvim-treesitter'
+    use 'nvim-treesitter/nvim-treesitter-textobjects'
+    use 'nvim-treesitter/playground'
 
     use {
         'nvim-tree/nvim-tree.lua',
@@ -63,9 +64,10 @@ return require('packer').startup(function(use)
       end
     }
 
-    use "numToStr/Comment.nvim"
     use "tpope/vim-surround"
     use "tpope/vim-repeat"
+    use "tpope/vim-sleuth"
     use "ggandor/leap.nvim"
+    use "numToStr/Comment.nvim"
 
 end)
