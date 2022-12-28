@@ -13,6 +13,7 @@ require'nvim-treesitter.configs'.setup {
   incremental_selection = {
       enable = true,
       keymaps = {
+          init_selection = '<c-h>',
           node_incremental = '<c-h>',
           scope_incremental = '<c-s>',
           node_decremental = '<c-l>',
