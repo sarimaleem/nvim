@@ -9,11 +9,17 @@ return require('packer').startup(function(use)
     -- Packer can manage itself
     use 'wbthomason/packer.nvim'
 
+    -- color schemes
+    use {'rose-pine/neovim', as = 'rose-pine'}
+    use { "sainnhe/gruvbox-material" }
+    use { "sainnhe/edge" }
+    use { "sainnhe/sonokai" }
+    use { "sainnhe/everforest" }
+
     use {
         'nvim-telescope/telescope.nvim', tag = '0.1.0',
         requires = { {'nvim-lua/plenary.nvim'} }
     }
-
 
     use {'nvim-treesitter/nvim-treesitter'}
 
@@ -26,13 +32,6 @@ return require('packer').startup(function(use)
     }
 
     use 'voldikss/vim-floaterm'
-
-    -- color schemes
-    use {'rose-pine/neovim', as = 'rose-pine'}
-    use { "sainnhe/gruvbox-material" }
-    use { "sainnhe/edge" }
-    use { "sainnhe/sonokai" }
-    use { "sainnhe/everforest" }
 
     use {
         'VonHeikemen/lsp-zero.nvim',
@@ -67,5 +66,6 @@ return require('packer').startup(function(use)
     use "tpope/vim-surround"
     use "tpope/vim-repeat"
     use "ggandor/leap.nvim"
+    use "nvim-lualine/lualine.nvim"
 
 end)
