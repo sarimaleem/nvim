@@ -70,5 +70,6 @@ return require('packer').startup(function(use)
     use "ggandor/leap.nvim"
     use "nvim-lualine/lualine.nvim"
     use "numToStr/Comment.nvim"
+    use "mbbill/undotree"
 
 end)
