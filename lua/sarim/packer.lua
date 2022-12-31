@@ -1,6 +1,5 @@
 -- This file can be loaded by calling `lua require('plugins')` from your init.vim
 
-
 -- Only required if you have packer configured as `opt`
 vim.cmd [[packadd packer.nvim]]
 
@@ -71,5 +70,12 @@ return require('packer').startup(function(use)
     use "nvim-lualine/lualine.nvim"
     use "numToStr/Comment.nvim"
     use "mbbill/undotree"
+    use "vimwiki/vimwiki"
+    use {
+        "windwp/nvim-autopairs",
+        config = function()
+            require("nvim-autopairs").setup {}
+        end
+    }
 
 end)
