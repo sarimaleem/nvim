@@ -1,4 +1,6 @@
 local lsp = require('lsp-zero')
+local telescope = require('telescope.builtin')
+
 lsp.preset('recommended')
 
 lsp.ensure_installed({
@@ -17,11 +19,14 @@ lsp.on_attach(function(client, bufnr)
   end
 
   vim.keymap.set("n", "K", vim.lsp.buf.hover, opts)
-  vim.keymap.set("n", "<leader>ws", vim.lsp.buf.workspace_symbol, opts)
-  vim.keymap.set("n", "<leader>d", vim.diagnostic.open_float, opts)
+  vim.keymap.set("n", "<leader>e", vim.diagnostic.open_float, opts)
   vim.keymap.set("n", "<leader>ca", vim.lsp.buf.code_action, opts)
-  vim.keymap.set("n", "<leader>rn", vim.lsp.buf.rename, opts)
-  vim.keymap.set("i", "<C-h>", vim.lsp.buf.signature_help, opts) 
+  vim.keymap.set("n", "<leader>rn", vim.lsp.buf.rename, {desc = "rename symbol"})
+  vim.keymap.set("i", "<C-h>", vim.lsp.buf.signature_help, opts)
+  vim.keymap.set("n", "gr", telescope.lsp_references, opts)
+  vim.keymap.set("n", "<leader>di", telescope.diagnostics, {desc = "Telescope Diagnostics"})
+  vim.keymap.set("n", "<leader>ds", telescope.lsp_document_symbols, {desc = "Telescope Document Symbols"})
+  vim.keymap.set("n", "<leader>ws", telescope.lsp_dynamic_workspace_symbols, {desc = "Telescope Workspace Symbols"})
 end)
 
 lsp.nvim_workspace()
