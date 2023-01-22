@@ -77,6 +77,12 @@ return require('packer').startup(function(use)
             require("nvim-autopairs").setup {}
         end
     }
-    use 'michal-h21/vimwiki-sync'
+    use "michal-h21/vimwiki-sync"
+    use {
+        "simrat39/symbols-outline.nvim",
+        config = function ()
+           require("symbols-outline").setup()
+        end
+    }
 
 end)
