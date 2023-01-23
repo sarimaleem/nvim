@@ -78,11 +78,6 @@ return require('packer').startup(function(use)
         end
     }
     use "michal-h21/vimwiki-sync"
-    use {
-        "simrat39/symbols-outline.nvim",
-        config = function ()
-           require("symbols-outline").setup()
-        end
-    }
+    use "simrat39/symbols-outline.nvim"
 
 end)
