@@ -27,7 +27,7 @@ lsp.on_attach(function(client, bufnr)
   vim.keymap.set("n", "<leader>rn", vim.lsp.buf.rename, {desc = "rename symbol"})
   vim.keymap.set("i", "<C-h>", vim.lsp.buf.signature_help, opts)
   vim.keymap.set("n", "gr", telescope.lsp_references, opts)
-  vim.keymap.set('n', "gI", vim.lsp.buf.implementation, opts)
+  vim.keymap.set('n', "gI", vim.lsp.buf.implementation, {desc = "go to implementation"})
   vim.keymap.set("n", "<leader>di", telescope.diagnostics, {desc = "Telescope Diagnostics"})
   vim.keymap.set("n", "<leader>ds", telescope.lsp_document_symbols, {desc = "Telescope Document Symbols"})
   vim.keymap.set("n", "<leader>ws", telescope.lsp_dynamic_workspace_symbols, {desc = "Telescope Workspace Symbols"})
@@ -74,5 +74,6 @@ cmp.setup {
   sources = {
     { name = 'nvim_lsp' },
     { name = 'luasnip' },
+    { name = 'path'}
   },
 }

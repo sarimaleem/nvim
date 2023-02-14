@@ -9,11 +9,11 @@ return require('packer').startup(function(use)
     use 'wbthomason/packer.nvim'
 
     -- color schemes
-    use {'rose-pine/neovim', as = 'rose-pine'}
-    use { "sainnhe/gruvbox-material" }
-    use { "sainnhe/edge" }
-    use { "sainnhe/sonokai" }
-    use { "sainnhe/everforest" }
+    use "sainnhe/gruvbox-material"
+    use "sainnhe/edge"
+    use "sainnhe/sonokai"
+    use "sainnhe/everforest"
+    use "rebelot/kanagawa.nvim"
 
     use {
         'nvim-telescope/telescope.nvim', tag = '0.1.0',
@@ -79,5 +79,8 @@ return require('packer').startup(function(use)
     }
     use "michal-h21/vimwiki-sync"
     use "simrat39/symbols-outline.nvim"
+
+    -- Debugging (I hope this isn't too bad to setup)
+    -- 
 
 end)
