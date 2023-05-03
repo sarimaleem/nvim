@@ -8,7 +8,6 @@ lsp.preset('recommended')
 lsp.ensure_installed({
   'tsserver',
   'eslint',
-  'sumneko_lua',
   'rust_analyzer',
   'clangd',
 })
@@ -27,7 +26,9 @@ lsp.on_attach(function(client, bufnr)
   vim.keymap.set("n", "<leader>rn", vim.lsp.buf.rename, {desc = "rename symbol"})
   vim.keymap.set("i", "<C-h>", vim.lsp.buf.signature_help, opts)
   vim.keymap.set("n", "gr", telescope.lsp_references, opts)
-  vim.keymap.set('n', "gI", vim.lsp.buf.implementation, {desc = "go to implementation"})
+  -- vim.keymap.set('n', "gi", vim.lsp.buf.implementation, {desc = "go to implementation"})
+  vim.api.nvim_set_keymap('n', '[d', '<cmd>lua vim.diagnostic.goto_prev()<CR>', { noremap = true, silent = true })
+  vim.api.nvim_set_keymap('n', ']d', '<cmd>lua vim.diagnostic.goto_next()<CR>', { noremap = true, silent = true })
   vim.keymap.set("n", "<leader>di", telescope.diagnostics, {desc = "Telescope Diagnostics"})
   vim.keymap.set("n", "<leader>ds", telescope.lsp_document_symbols, {desc = "Telescope Document Symbols"})
   vim.keymap.set("n", "<leader>ws", telescope.lsp_dynamic_workspace_symbols, {desc = "Telescope Workspace Symbols"})
