@@ -1,12 +1,6 @@
 local M = {}
 
 local function configure()
-  -- TODO this? not sure why it's not working
-  -- local dap_install = require "dap-install"
-  -- dap_install.setup {
-  --   installation_path = vim.fn.stdpath "data" .. "/dapinstall/",
-  -- }
-
   vim.api.nvim_exec([[
     highlight DapBreakpoint ctermbg=0 guifg='#993939' guibg='#31353f'
   ]], false)
