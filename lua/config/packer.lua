@@ -14,6 +14,8 @@ return require('packer').startup(function(use)
     use "sainnhe/sonokai"
     use "sainnhe/everforest"
     use "rebelot/kanagawa.nvim"
+    use "cpea2506/one_monokai.nvim"
+
 
     use {
         'nvim-telescope/telescope.nvim', tag = '0.1.0',

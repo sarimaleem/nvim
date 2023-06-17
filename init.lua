@@ -1,3 +1,3 @@
-require("sarim")
+require("config")
 
 
