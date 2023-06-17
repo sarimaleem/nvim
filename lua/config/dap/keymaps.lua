@@ -22,7 +22,7 @@ function M.setup()
       h = { "<cmd>lua require'dap.ui.widgets'.hover()<cr>", "Hover Variables" },
       S = { "<cmd>lua require'dap.ui.widgets'.scopes()<cr>", "Scopes" },
       i = { "<cmd>lua require'dap'.step_into()<cr>", "Step Into" },
-      o = { "<cmd>lua require'dap'.step_over()<cr>", "Step Over" },
+      n = { "<cmd>lua require'dap'.step_over()<cr>", "Step Over" },
       p = { "<cmd>lua require'dap'.pause.toggle()<cr>", "Pause" },
       q = { "<cmd>lua require'dap'.close()<cr>", "Quit" },
       r = { "<cmd>lua require'dap'.repl.toggle()<cr>", "Toggle Repl" },

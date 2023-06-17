@@ -1,4 +1,3 @@
-print("hello world")
 local M = {}
 
 local function configure()
@@ -66,4 +65,7 @@ end
 
 configure_debuggers()
 
+require('dap.ext.vscode').load_launchjs(nil, {})
+
 return M
+
