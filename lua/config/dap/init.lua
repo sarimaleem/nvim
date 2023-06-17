@@ -1,34 +1,32 @@
 local M = {}
 
 local function configure()
-  -- TODO: this lmao?
+  -- TODO this? not sure why it's not working
   -- local dap_install = require "dap-install"
   -- dap_install.setup {
   --   installation_path = vim.fn.stdpath "data" .. "/dapinstall/",
   -- }
 
-  local dap_breakpoint = {
-    error = {
-      text = "🔴",
-      texthl = "LspDiagnosticsSignError",
-      linehl = "",
-      numhl = "",
-    },
-    rejected = { text = "", texthl = "LspDiagnosticsSignHint",
-      linehl = "",
-      numhl = "",
-    },
-    stopped = {
-      text = "⭐️",
-      texthl = "LspDiagnosticsSignInformation",
-      linehl = "DiagnosticUnderlineInfo",
-      numhl = "LspDiagnosticsSignInformation",
-    },
-  }
+  vim.api.nvim_exec([[
+    highlight DapBreakpoint ctermbg=0 guifg='#993939' guibg='#31353f'
+  ]], false)
 
-  vim.fn.sign_define("DapBreakpoint", dap_breakpoint.error)
-  vim.fn.sign_define("DapStopped", dap_breakpoint.stopped)
-  vim.fn.sign_define("DapBreakpointRejected", dap_breakpoint.rejected)
+  vim.api.nvim_exec([[
+    highlight DapLogPoint ctermbg=0 guifg='#61afef' guibg='#31353f'
+  ]], false)
+
+  vim.api.nvim_exec([[
+    highlight DapStopped ctermbg=0 guifg='#98c379' guibg='#31353f'
+  ]], false)
+
+  vim.fn.sign_define('DapBreakpoint', { text = '', texthl = 'DapBreakpoint', linehl = 'DapBreakpoint',
+    numhl = 'DapBreakpoint' })
+  vim.fn.sign_define('DapBreakpointCondition',
+    { text = 'ﳁ', texthl = 'DapBreakpoint', linehl = 'DapBreakpoint', numhl = 'DapBreakpoint' })
+  vim.fn.sign_define('DapBreakpointRejected',
+    { text = '', texthl = 'DapBreakpoint', linehl = 'DapBreakpoint', numhl = 'DapBreakpoint' })
+  vim.fn.sign_define('DapLogPoint', { text = '', texthl = 'DapLogPoint', linehl = 'DapLogPoint', numhl = 'DapLogPoint' })
+  vim.fn.sign_define('DapStopped', { text = '', texthl = 'DapStopped', linehl = 'DapStopped', numhl = 'DapStopped' })
 end
 
 local function configure_exts()
@@ -57,9 +55,9 @@ local function configure_debuggers()
 end
 
 function M.setup()
-  configure() -- Configuration
-  configure_exts() -- Extensions
-  configure_debuggers() -- Debugger
+  configure()                           -- Configuration
+  configure_exts()                      -- Extensions
+  configure_debuggers()                 -- Debugger
   require("config.dap.keymaps").setup() -- Keymaps
 end
 
@@ -68,4 +66,3 @@ configure_debuggers()
 require('dap.ext.vscode').load_launchjs(nil, {})
 
 return M
-
