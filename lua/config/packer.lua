@@ -1,5 +1,4 @@
--- Only required if you have packer configured as `opt`
-vim.cmd [[packadd packer.nvim]]
+-- Only required if you have packer configured as `opt` vim.cmd [[packadd packer.nvim]]
 
 
 return require('packer').startup(function(use)
@@ -34,6 +33,7 @@ return require('packer').startup(function(use)
 
     use 'voldikss/vim-floaterm'
 
+    -- The LSP stuff
     use {
         'VonHeikemen/lsp-zero.nvim',
         requires = {
@@ -86,17 +86,18 @@ return require('packer').startup(function(use)
       opt = true,
       event = "BufReadPre",
       module = { "dap" },
-      wants = { "nvim-dap-virtual-text", "DAPInstall.nvim", "nvim-dap-ui", "nvim-dap-python", "which-key.nvim" },
+      wants = { "nvim-dap-virtual-text", "nvim-dap-ui", "nvim-dap-python", "which-key.nvim" },
       requires = {
         "theHamsta/nvim-dap-virtual-text",
         "rcarriga/nvim-dap-ui",
         "mfussenegger/nvim-dap-python",
         "nvim-telescope/telescope-dap.nvim",
-        { "leoluz/nvim-dap-go", module = "dap-go" },
-        { "jbyuki/one-small-step-for-vimkind", module = "osv" },
       },
       config = function()
         require("config.dap").setup()
       end,
     }
+
+    use {'kevinhwang91/nvim-bqf', ft = 'qf'}
+    use({ "iamcco/markdown-preview.nvim", run = "cd app && npm install", setup = function() vim.g.mkdp_filetypes = { "markdown" } end, ft = { "markdown" }, })
 end)
