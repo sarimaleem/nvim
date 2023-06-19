@@ -83,12 +83,11 @@ cmp.setup {
 local function lspSymbol(name, icon)
   vim.fn.sign_define(
     'DiagnosticSign' .. name,
-    { text = icon, numhl = 'DiagnosticDefault' .. name }
+    { text = icon, numhl = 'DiagnosticDefault' .. name, texthl="DiagnosticSign" .. name}
   )
 end
 
-lspSymbol('Error', '')
-lspSymbol('Hint', '')
-lspSymbol('Info', '')
+lspSymbol('Error', '')
+lspSymbol('Hint', '')
+lspSymbol('Info', '')
 lspSymbol('Warn', '')
-
