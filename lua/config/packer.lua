@@ -92,6 +92,7 @@ return require('packer').startup(function(use)
         "rcarriga/nvim-dap-ui",
         "mfussenegger/nvim-dap-python",
         "nvim-telescope/telescope-dap.nvim",
+        "rcarriga/cmp-dap"
       },
       config = function()
         require("config.dap").setup()
