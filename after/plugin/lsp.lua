@@ -38,16 +38,12 @@ lsp.nvim_workspace()
 lsp.setup()
 
 
--- prettier side icons
+-- Prettier Diagnostic Icons
 local function lspSymbol(name, icon)
-  vim.fn.sign_define(
-    'DiagnosticSign' .. name,
-    { text = icon, numhl = 'DiagnosticDefault' .. name, texthl="DiagnosticSign" .. name}
-  )
+  vim.fn.sign_define('DiagnosticSign' .. name, {text = icon, numhl = 'DiagnosticDefault' .. name, texthl = "DiagnosticSign" .. name})
 end
 
 lspSymbol('Error', '')
 lspSymbol('Hint', '')
 lspSymbol('Info', '')
 lspSymbol('Warn', '')
-
