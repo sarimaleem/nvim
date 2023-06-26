@@ -39,4 +39,5 @@ vim.o.smartcase = true
 -- some remaps
 vim.api.nvim_set_keymap("n", "gh", "^", {desc = "goto beginning of line", noremap = true})
 vim.api.nvim_set_keymap("n", "gl", "$", {desc = "goto end of line", noremap = true})
+vim.keymap.set("n", "<leader>sr", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]])
 vim.keymap.set("x", "<leader>p", [["_dP]])
