@@ -33,3 +33,5 @@ require("nvim-tree").setup({
 vim.g.nvim_tree_icons = {
   default = '',
 }
+
+vim.keymap.set("n", "<leader>n", vim.cmd.NvimTreeFindFileToggle)

@@ -10,6 +10,7 @@ require'nvim-treesitter.configs'.setup {
   -- Recommendation: set to false if you don't have `tree-sitter` CLI installed locally
   auto_install = true,
 
+  -- TODO change these keybinding eventually
   incremental_selection = {
       enable = true,
       keymaps = {
