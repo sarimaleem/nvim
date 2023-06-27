@@ -99,7 +99,12 @@ return require('packer').startup(function(use)
     }
 
     use { 'kevinhwang91/nvim-bqf', ft = 'qf' }
-    use({ "iamcco/markdown-preview.nvim", run = "cd app && npm install",
-        setup = function() vim.g.mkdp_filetypes = { "markdown" } end, ft = { "markdown" }, })
+    use({
+        "iamcco/markdown-preview.nvim",
+        run = "cd app && npm install",
+        setup = function() vim.g.mkdp_filetypes = { "markdown" } end,
+        ft = { "markdown" },
+    })
     use "folke/flash.nvim"
+    use "Vigemus/iron.nvim"
 end)
