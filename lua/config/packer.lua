@@ -65,7 +65,6 @@ return require('packer').startup(function(use)
     use "tpope/vim-surround"
     use "tpope/vim-repeat"
     use "tpope/vim-sleuth"
-    use "ggandor/leap.nvim"
     use "nvim-lualine/lualine.nvim"
     use "numToStr/Comment.nvim"
     use "mbbill/undotree"

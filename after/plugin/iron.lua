@@ -19,8 +19,8 @@ iron.setup {
   -- Iron doesn't set keymaps by default anymore.
   -- You can set them here or manually add keymaps to the functions in iron.core
   keymaps = {
-    send_motion = "<space>sc",
-    visual_send = "<space>sc",
+    send_motion = "<space>se",
+    visual_send = "<space>se",
     send_file = "<space>sf",
     send_line = "<space>sl",
     send_until_cursor = "<space>su",
