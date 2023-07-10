@@ -37,7 +37,11 @@ vim.o.ignorecase = true
 vim.o.smartcase = true
 
 -- some remaps
-vim.api.nvim_set_keymap("n", "gh", "^", {desc = "goto beginning of line", noremap = true})
-vim.api.nvim_set_keymap("n", "gl", "$", {desc = "goto end of line", noremap = true})
-vim.keymap.set("n", "<leader>sr", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]])
-vim.keymap.set("x", "<leader>p", [["_dP]])
+vim.api.nvim_set_keymap("n", "H", "^", { desc = "goto beginning of line" })
+vim.api.nvim_set_keymap("v", "H", "^", { desc = "goto beginning of line" })
+vim.api.nvim_set_keymap("n", "L", "$", { desc = "goto end of line" })
+vim.api.nvim_set_keymap("v", "L", "$", { desc = "goto end of line" })
+vim.api.nvim_set_keymap("n", "<leader>sr", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]],
+    { desc = "search and replace word" })
+vim.api.nvim_set_keymap("x", "<leader>p", [["_dP]], { desc = "paste without replacing register" })
+vim.api.nvim_set_keymap("n", "<F9>", ":so ~/.config/nvim/init.lua<CR>", { desc = "source config" })
