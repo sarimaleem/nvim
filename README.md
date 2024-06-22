@@ -1,3 +1,3 @@
-# Neovim Config
+[#](#) Neovim Config
 
 Requires v0.9

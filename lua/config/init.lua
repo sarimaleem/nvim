@@ -1,3 +1,3 @@
-require("config.packer")
 require("config.basics")
+require ("config.lazy")
 require("config.colors")
